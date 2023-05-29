@@ -61,6 +61,7 @@ public class Join {
 
 		HMemberDAO hmem = new HMemberDAO();
 		frame = new JFrame();
+		frame.setFont(new Font("코트라 희망체", Font.PLAIN, 18));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ImagePanel MainPanel = new ImagePanel(new ImageIcon("C:\\Users\\admin\\Desktop\\tnwjd\\join.jpg").getImage());
@@ -115,7 +116,7 @@ public class Join {
 		textField_3.setColumns(10);
 
 		btnNewButton = new JButton("가입하기-->");
-		btnNewButton.setFont(new Font("Neo둥근모", Font.PLAIN, 18));
+		btnNewButton.setFont(new Font("KBO 다이아고딕 Bold", Font.PLAIN, 22));
 		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.setBounds(557, 458, 141, 35);
 		MainPanel.add(btnNewButton);
