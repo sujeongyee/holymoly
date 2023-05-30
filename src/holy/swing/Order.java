@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JToggleButton;
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -15,9 +17,12 @@ import java.awt.Color;
 
 //예매할지 내역 확인할지 !!!
 
+   
+
 public class Order {
 
 	public JFrame frame;
+	String id = "";
 
 	/**
 	 * Launch the application.
@@ -49,7 +54,7 @@ public class Order {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		ImagePanel MainPanel = new ImagePanel(new ImageIcon("C:\\Users\\admin\\Desktop\\tnwjd\\order.jpg").getImage());
+		ImagePanel MainPanel = new ImagePanel(new ImageIcon("C:\\Users\\user\\Desktop\\course\\java\\work\\project2\\src\\image\\order.jpg").getImage());
 		frame.setSize(new Dimension(770, 640));
 		frame.getContentPane().add(MainPanel);
 		
@@ -58,6 +63,18 @@ public class Order {
 		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.setBounds(50, 45, 316, 503);
 		MainPanel.add(btnNewButton);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				TicketOrder to = new TicketOrder();
+				to.id2=id;
+				to.frame.setVisible(true);
+				
+
+			}
+		});
+		
+		
 		
 		JButton btnNewButton_1 = new JButton("예매내역확인");
 		btnNewButton_1.setFont(new Font("Neo둥근모", Font.PLAIN, 40));

@@ -57,7 +57,7 @@ public class Login extends JFrame{
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		ImagePanel MainPanel = new ImagePanel(new ImageIcon("C:\\Users\\admin\\Desktop\\tnwjd\\login.jpg").getImage());
+		ImagePanel MainPanel = new ImagePanel(new ImageIcon("C:\\Users\\user\\Desktop\\course\\java\\work\\project2\\src\\image\\login.jpg").getImage());
 		frame.setSize(new Dimension(755, 600));
 
 		frame.setPreferredSize(new Dimension(755, 600));
@@ -91,6 +91,7 @@ public class Login extends JFrame{
 					JOptionPane.showMessageDialog(null, "로그인 성공");
 					
 					Order order = new Order();
+					order.id=textField.getText();
 					frame.setVisible(false);
 					order.frame.setVisible(true);
 					

@@ -64,7 +64,7 @@ public class Join {
 		frame.setFont(new Font("코트라 희망체", Font.PLAIN, 18));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		ImagePanel MainPanel = new ImagePanel(new ImageIcon("C:\\Users\\admin\\Desktop\\tnwjd\\join.jpg").getImage());
+		ImagePanel MainPanel = new ImagePanel(new ImageIcon("C:\\Users\\user\\Desktop\\course\\java\\work\\project2\\src\\image\\join.jpg").getImage());
 		frame.setSize(new Dimension(785, 620));
 		frame.getContentPane().add(MainPanel);
 
@@ -116,9 +116,9 @@ public class Join {
 		textField_3.setColumns(10);
 
 		btnNewButton = new JButton("가입하기-->");
-		btnNewButton.setFont(new Font("KBO 다이아고딕 Bold", Font.PLAIN, 22));
+		btnNewButton.setFont(new Font("Neo둥근모", Font.PLAIN, 18));
 		btnNewButton.setBackground(Color.WHITE);
-		btnNewButton.setBounds(557, 458, 141, 35);
+		btnNewButton.setBounds(557, 458, 146, 32);
 		MainPanel.add(btnNewButton);
 		
 		
@@ -142,6 +142,12 @@ public class Join {
 					HmemberVO hmem2 = new HmemberVO(textField.getText(),pwd,textField_2.getText(),textField_3);
 					hmem.join(hmem2);
 					JOptionPane.showMessageDialog(null, "가입 완료!");
+					
+					
+					frame.setVisible(false);
+					Main main = new Main();
+					main.frame.setVisible(true);
+					
 				}
 
 

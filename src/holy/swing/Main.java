@@ -22,7 +22,7 @@ import java.awt.Color;
 
 public class Main {
 
-	private JFrame frame;
+	public JFrame frame;
 	private JPasswordField passwordField;
 
 	/**
@@ -55,7 +55,7 @@ public class Main {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		ImagePanel MainPanel = new ImagePanel(new ImageIcon("C:\\Users\\admin\\Desktop\\tnwjd\\cinema.jpg").getImage());
+		ImagePanel MainPanel = new ImagePanel(new ImageIcon("C:\\Users\\user\\Desktop\\course\\java\\work\\project2\\src\\image\\cinema.jpg").getImage());
 		frame.setSize(new Dimension(755, 600));
 
 		frame.setPreferredSize(new Dimension(755, 600));
@@ -86,7 +86,7 @@ public class Main {
 				frame.setVisible(false);
 				Join join = new Join();
 				join.frame.setVisible(true);
-
+				
 
 			}
 		});

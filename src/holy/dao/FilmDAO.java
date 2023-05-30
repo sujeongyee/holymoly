@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,6 +81,44 @@ public class FilmDAO {
 		return list;
 	}
 	
+	
+	public List<FilmVO> getTitle() {
+		String sql = "SELECT * FROM FILM";
+		Connection conn =null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<FilmVO> filmv = new ArrayList<>();
+		try {
+			conn = DriverManager.getConnection(url, uid, upw);
+			pstmt = conn.prepareStatement(sql); 
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				String filmNum = rs.getString("filmnum");
+				String filmTitle = rs.getString("filmtitle");
+				String filmContent = rs.getString("filmcontent");
+				String filmRuntime = rs.getString("filmruntime");
+				int filmPrice = rs.getInt("filmprice");
+				FilmVO fv = new FilmVO(filmNum,filmTitle,filmContent,filmRuntime,filmPrice);
+				filmv.add(fv);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("getTicket메소드 오류");
+		} finally {
+			try {
+				conn.close();
+				pstmt.close();
+				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return filmv;
+		
+	}
 	
 	
 	
